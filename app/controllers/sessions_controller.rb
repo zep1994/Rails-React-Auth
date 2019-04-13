@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionsController < ApiController
     skip_before_action :require_login, only: [:create], raise: false 
 
     def create
@@ -28,5 +28,5 @@ class SessionsController < ApplicationController
     def logout 
         current_user.invalidate_token
     end 
-    
+
 end
